@@ -1,8 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+/* 
+    
+*/
+
 function ContactsShow(props){
-    if(props.arContacts.length == 0){
+    if(props.arContacts.length === 0){
         return <h3>No contacts loaded yet</h3>
     }
 
