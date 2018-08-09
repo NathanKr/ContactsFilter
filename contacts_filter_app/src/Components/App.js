@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles.css';
+import Contacts from './Contacts';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        123
+        <Contacts />
       </div>
     );
   }
