@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 /* 
-    
+
 */
 
 function ContactsShow(props){
@@ -14,16 +14,22 @@ function ContactsShow(props){
         return <p>Load CSV Error : {props.error}</p>;
     }
 
-    const firstRow = props.arContacts[0].map(col => <th>{col}</th>);    
+    const firstRow = props.arContacts[0].map((col,index) => <th key={index}>{col}</th>);    
 
     const mapFunctionElements = 
-        row => <tr>{row.map(item =><td>{item}</td>)}</tr>;
+        (row,index) => <tr key={index}>
+            {row.map((item,index) =><td key={index}>{item}</td>)}
+        </tr>;
 
     const elements= props.arContacts.slice(1).map(mapFunctionElements);
 
     return <table>
-        <tr>{firstRow}</tr>
+        <thead>
+            <tr key={0}>{firstRow}</tr>
+        </thead>
+        <tbody>
         {elements}
+        </tbody>
     </table>;
 }
 

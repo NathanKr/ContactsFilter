@@ -109,4 +109,5 @@ This apps has three legs :
 <ul>
 <li>Fix class csv-input to take just enough space it needs</li>
 <li>table width is not good e.g. width of e-mail is too wide , also it get out of 100% , may be try bootstrap</li>
+<li>ContactsShow has few key : 1) understand exactly 2) is index enough ? may be some need email as key</li>
 </ul>

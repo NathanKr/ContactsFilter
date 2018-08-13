@@ -12,6 +12,17 @@
   border-radius: 5px;
 }
 
+.contacts-filter {
+  padding: 10px;
+  margin: 15px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contacts-filter input {
+  width : 80%
+}
+
  table{
   border: 1px solid grey;
   border-collapse: collapse;

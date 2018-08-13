@@ -1,7 +1,9 @@
 const ActionTypes = {
-    loadContactsStart : "loadContactsStart",
+   // loadContactsStart : "loadContactsStart",
     loadContactsFinished : "loadContactsFinished",
-    loadContactsError : "loadContactsError"
+    loadContactsError : "loadContactsError",
+
+    setFilter : "setFilter"
 };
 
 export default ActionTypes;
