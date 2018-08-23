@@ -30,22 +30,30 @@ This apps has three legs :
 <li>Test</li>
 </ol>
 </li>
-<li>Given contacst which are stored as an array of objects(row per object) it is amzingly simple to use array.filter and invoke javascript eval on the input string (it is assumed at this stage that the user is a developer)</li>
+<li>Given contacts which are stored as an array of objects(row per object) it is amzingly simple to use array.filter and invoke javascript eval on the input string (it is assumed at this stage that the user is a developer)</li>
 <li>Loading local CSV file and parsing it to a table is done nicely by react-csv-reader</li>
+<li>filterContactsReducer is aware of the actions : loadContactsFinished and setFilter</li>
+<li>You can use redux-devtools</li>
+<li>changing the filter value for thousands of contacts will cause a sluggish behavior because every character added will cause re-render. I have used denounce of lodash to solve this</li>
+<li>denounce is NOT pure function so it is NOT invoked in the reducer , it is used in the dispatch method</li>
 </ul>
+
 
 <h3>Actions</h3>
 <table border=1>
 <tr>
 <th>Description</th>
+<th>In code</th>
 <th>Require middleware</th>
 </tr>
 <tr>
 <td>Load contacts from csv file</td>
+<td>ActionTypes.loadContactsFinished</td>
 <td>yes</td>
 </tr>
 <tr>
 <td>Filter contacts</td>
+<td>ActionTypes.setFilter</td>
 <td>no</td>
 </tr>
 <tr>
@@ -55,10 +63,12 @@ This apps has three legs :
 <li>Edit selected mail</li>
 </ul>
 </td>
+<td></td>
 <td>only for send mail</td>
 </tr>
 <tr>
 <td>Concat email addresses to string</td>
+<td></td>
 <td>no</td>
 </tr>
 </table>
@@ -81,6 +91,13 @@ This apps has three legs :
 </ul>
 
 
+<h3>Unit test</h3>
+<p>Unit test is done using jest</p>
+<ul>
+<li>check filterContactsReducer.test.js</li>
+</ul>
+
+
 <h3>Future</h3>
 <ul>
 <li>Handle csv other than exported from linkedIn</li>
@@ -91,11 +108,10 @@ This apps has three legs :
 <ul>
 <li>npm install redux</li>
 <li>npm install react-redux</li>
-<li>npm install react-router</li>
 <li>npm install redux-logger</li>
-<li>npm install prop-types</li>
+<li>npm install lodash</li>
 <li>npm install react-csv-reader</li>
-
+<li>npm install --save-dev redux-devtools-extension</li>
 </ul>
 
 <h3>Server installations  - for send mail only</h3>
@@ -110,4 +126,6 @@ This apps has three legs :
 <li>Fix class csv-input to take just enough space it needs</li>
 <li>table width is not good e.g. width of e-mail is too wide , also it get out of 100% , may be try bootstrap</li>
 <li>ContactsShow has few key : 1) understand exactly 2) is index enough ? may be some need email as key</li>
+<li>Can i use react-table and allow to choose filters instead of eval</li>
+<li>There is no indication of loading contacts and filtering contacts</li>
 </ul>

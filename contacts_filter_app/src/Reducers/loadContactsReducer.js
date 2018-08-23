@@ -10,12 +10,16 @@ export default function loadContactsReducer (state = initialState,action){
     switch(action.type){
 
         case ActionTypes.loadContactsFinished:
-        state = {   ...state ,  arContacts: action.payload,
-                    loaded:true ,error:''};
+        state = {   ...state ,  
+                    arContacts: action.payload,
+                    loaded:true ,
+                    error:''};
         break;
 
         case ActionTypes.loadContactsError:
-        state = {   ...state , arContacts: []  ,loaded : false, 
+        state = {   ...state , 
+                    arContacts: []  ,
+                    loaded : false, 
                     error:action.payload}
         break;
 

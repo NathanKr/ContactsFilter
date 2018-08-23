@@ -3,6 +3,9 @@
   padding: 0 20px;
 }
 
+.csv-input label{
+  font-weight: bold;
+}
 
 .csv-input {
   padding: 10px;
@@ -31,7 +34,8 @@
  tr:nth-child(even) {
   background-color: lightgray;
 }
- th , td {
+
+th , td {
  padding: 5px;
  text-align: left;
  border: 1px solid grey;
